@@ -26,8 +26,7 @@ public class containsDuplicate {
         int[] arr = {1,2,3,4,1,2,5,6};
         int[] arr2 = {1,2,3,4};
 
-        System.out.println(containsDuplcate(arr));
-        System.out.println(containsDuplcate(arr2));
+        System.out.println(containsDuplicate(arr));
 
 
     }

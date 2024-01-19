@@ -1,19 +1,22 @@
 package twopointers;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
+
 public class twosumII {
     public static int[] twoSum(int[] numbers, int target) {
 
-        Map<Integer,Integer> map1 = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
 
         for (int i = 0; i < numbers.length ; i++) {
 
             int diff = target - numbers[i];
 
-            if(map1.contains(diff)){
-                int res = map1.get(diff);
-                return new int[]{i,diff};
+            if(map.containsKey(diff)){
+                int res = map.get(diff);
+                return new int[]{res+1,i+1};
             }
-            map1.add(numbers[i],i);
+            map.put(numbers[i],i);
 
         }
         return new int[]{};
@@ -21,9 +24,9 @@ public class twosumII {
     }
 
     public static  void main(String[] args) {
-        int[] arr = {2,7,11,15};
-        int target = 9;
-        System.out.println(twoSum(arr,target));
+        int[] arr = {-1,0};
+        int target = -1;
+        System.out.println(Arrays.toString(twoSum(arr,target)));
 
     }
 }
